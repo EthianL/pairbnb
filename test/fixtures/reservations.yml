@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing_id: MyString
+  total_price: 1
+  check_in: MyString
+  check_out: MyString
+
+two:
+  listing_id: MyString
+  total_price: 1
+  check_in: MyString
+  check_out: MyString
