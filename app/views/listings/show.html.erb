@@ -1,0 +1,41 @@
+<h4>Hi! Welcome to your Listings Page</h4>
+<br>
+<br>
+<br>
+<% if signed_in? -%>
+
+First Name: <%= current_user.first_name %> <br>
+Last Name:  <%= current_user.last_name %>  <br>
+Email:      <%= current_user.email %>
+<br>
+<br>
+<br>
+
+<%form_for @listing do |e| %>
+
+<h1>Title: <%= e.title %></h1>
+<p>Address: <%= e.address %><p>
+<p>Bedroom: <%= e.bedroom %><p>
+<p>Bathroom: <%= e.bathroom %><p>
+<p>Max_guest: <%= e.max_guest %><p>
+<p>Description: <%= e.description %><p>
+<p>Internet: <%= e.internet %><p>
+<p>Pet: <%= e.pet %><p>
+<p>Smoker: <%= e.smoker %><p>
+<p>Price: <%= e.price %><p>
+
+<%= link_to "Edit", edit_listening_path(@listing) %>
+
+
+<div class="digg_pagination">
+<div class="page_info">
+    <%= page_entries_info @posts %>
+</div>
+    <%= will_paginate @posts, :container => false %>
+</div>
+  
+<% end %>
+<% end %>
+
+
+

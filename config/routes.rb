@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   
   root 'static_pages#index'
 
-  resources :users, only: :show
+  resources :users, only: :show do
+  resources :listings, only: [:index, :show, :create, :edit, :update, :new]
+end
 
-
-  
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   
   # resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   # resource :session, controller: "clearance/sessions", only: [:create]

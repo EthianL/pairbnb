@@ -1,0 +1,49 @@
+<h3>Hello <%= current_user.first_name %>. List a property here!</h3><br>
+
+
+<%= form_for @listing do |l| %>
+           
+         <div class="form-control">
+            <%= l.label :title %>
+            <%= l.text_field :title %>
+         </div>  
+         <div class="form-control">
+            <%= l.label :address %>
+            <%= l.text_field :address %>
+         </div>  
+         <div class="form-control">
+            <%= l.label :bedroom %>
+            <%= l.text_field :bedroom %>
+         </div> 
+         <div class="form-control">
+            <%= l.label :bathroom %>
+            <%= l.text_field :bathroom %>
+         </div> 
+         <div class="form-control">
+            <%= l.label :max_guest %>
+            <%= l.text_field :max_guest %>
+         </div>  
+          <div class="form-control">
+            <%= l.label :description %>
+            <%= l.text_field :description %>
+         </div> 
+          <div class="form-control">
+            <%= l.label :internet %>
+            <%= l.text_field :internet %>
+         </div> 
+          <div class="form-control">
+            <%= l.label :pet %>
+            <%= l.text_field :pet %>
+         </div> 
+          <div class="form-control">
+            <%= l.label :smoker %>
+            <%= l.text_field :smoker %>
+         </div> 
+          <div class="form-control">
+            <%= l.label :price %>
+            <%= l.text_field :price %>
+         </div> 
+         
+         <%= l.submit %>
+         
+         <% end -%>

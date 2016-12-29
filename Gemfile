@@ -47,7 +47,10 @@ group :development do
 #new gems
 gem "clearance"
 gem "figaro"
-
+gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'will_paginate', '~> 3.1.0'  
+gem 'carrierwave', '~> 1.0'  
   
   
 end

@@ -1,0 +1,61 @@
+<% if signed_in? -%>
+
+
+<h3>Hello <%= current_user.first_name %>. List a property here!</h3><br>
+
+First Name: <%= current_user.first_name %> <br>
+Last Name:  <%= current_user.last_name %>  <br>
+Email:      <%= current_user.email %>      <br>
+           
+
+<%= form_for [current_user, @listing] do |e| %>
+           
+         <div class="form-control">
+            <%= e.label :title %>
+            <%= e.text_field :title %>
+         </div>  
+         <div class="form-control">
+            <%= e.label :address %>
+            <%= e.text_field :address %>
+         </div>  
+         <div class="form-control">
+            <%= e.label :bedroom %>
+            <%= e.text_field :bedroom %>
+         </div> 
+         <div class="form-control">
+            <%= e.label :bathroom %>
+            <%= e.text_field :bathroom %>
+         </div> 
+         <div class="form-control">
+            <%= e.label :max_guest %>
+            <%= e.text_field :max_guest %>
+         </div>  
+          <div class="form-control">
+            <%= e.label :description %>
+            <%= e.text_field :description %>
+         </div> 
+          <div class="form-control">
+            <%= e.label :internet %>
+            <%= e.text_field :internet %>
+         </div> 
+          <div class="form-control">
+            <%= e.label :pet %>
+            <%= e.text_field :pet %>
+         </div> 
+          <div class="form-control">
+            <%= e.label :smoker %>
+            <%= e.text_field :smoker %>
+         </div> 
+          <div class="form-control">
+            <%= e.label :price %>
+            <%= e.text_field :price %>
+         </div> 
+         
+         <%= e.submit %>
+         
+         <% end -%>
+     
+         
+<% else -%>
+<%= link_to t(".sign_in"), sign_in_path %>
+<% end -%>

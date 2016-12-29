@@ -25,6 +25,17 @@ class UsersController < ApplicationController
    end
    
    def update
+      if @user.update(user_params)
+         flash[:success] = "Successfully updated the user"
+         redirect_to @user
+      else
+         flash[:danger] = "Error updating user"
+         render :edit
+      end
+   end
+   
+   def find_user
+    @user = User.find(params[:id])
    end
 
 
